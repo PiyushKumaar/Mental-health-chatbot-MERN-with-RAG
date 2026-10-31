@@ -90,7 +90,7 @@ flowchart LR
 ### 1️⃣ AI Chatbot (Flask + LangChain)
 ```bash
 # Clone the repository (if not already done)
-git clone https://github.com/Piyushkohlii/Mental-health-chatbot-MERN-with-RAG.git
+git clone https://github.com/PiyushKumaar/Mental-health-chatbot-MERN-with-RAG.git
 cd "E:\Mental Health Chatbot"
 
 # Create a dedicated virtual environment for the Python side
