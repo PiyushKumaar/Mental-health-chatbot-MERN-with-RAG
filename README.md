@@ -230,8 +230,8 @@ Contributions are welcome! Please follow these steps:
 
 ## Author & Contact
 **Piyush Kohli** – Full‑stack developer
-- GitHub: [Piyushkohlii](https://github.com/Piyushkohlii)
-- Email: <piyush.kohli@example.com>
+- GitHub: [Piyushkohlii](https://github.com/Piyushkumaar)
+- Email: <piiussh@gmail.com>
 
 Feel free to open an issue for bugs, feature requests, or general questions.
 
