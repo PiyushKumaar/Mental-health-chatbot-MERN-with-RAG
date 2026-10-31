@@ -60,22 +60,26 @@ The solution is split into three independent parts that communicate over HTTP:
 ## Architecture
 ```mermaid
 flowchart LR
-    subgraph Frontend[Frontend (React)]
-        UI[UI Components] --> API[Calls Backend API]
+    subgraph Frontend["Frontend (React)"]
+        UI["UI Components"] --> API["Calls Backend API"]
     end
-    subgraph Backend[Backend (Express)]
-        Auth[Auth / Users] --> DB[(MongoDB)]
-        Chat[Chat Routes] --> AI[AI Chatbot (Flask)]
-        Journal[Journal Routes] --> DB
-        Mood[Mood Routes] --> DB
+    subgraph Backend["Backend (Express)"]
+        Auth["Auth / Users"] --> DB[(MongoDB)]
+        Chat["Chat Routes"] --> AI["AI Chatbot (Flask)"]
+        Journal["Journal Routes"] --> DB
+        Mood["Mood Routes"] --> DB
     end
-    subgraph AI[AI Chatbot (Flask)]
-        LLM[Groq LLM] --> Pine[Pinecone Vector Store]
-        MoodDetect[Prompt‑based Mood Detection]
+    subgraph AI["AI Chatbot (Flask)"]
+        LLM["Groq LLM"] --> Pine["Pinecone Vector Store"]
+        MoodDetect["Prompt‑based Mood Detection"]
     end
-    UI -->|HTTPS| Auth & Chat & Journal & Mood
-    Chat -->|HTTP| AI
-    AI -->|HTTPS| LLM & Pine
+    UI -- "HTTPS" --> Auth
+    UI -- "HTTPS" --> Chat
+    UI -- "HTTPS" --> Journal
+    UI -- "HTTPS" --> Mood
+    Chat -- "HTTP" --> AI
+    AI -- "HTTPS" --> LLM
+    AI -- "HTTPS" --> Pine
 ```
 
 ---
